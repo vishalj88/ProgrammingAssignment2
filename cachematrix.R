@@ -22,11 +22,11 @@ cacheSolve <- function(x, ...) {
   m <- x$get_inv_matrix()
   if(!is.null(m)){
     message("getting cached data")
-    return(m)
+    return(m) #returns the cached result
   }
   
   data<- x$get()
-  m <- solve(data, ...)
-  x$set_inv_matrix(m)
-  m
+  m <- solve(data, ...) #inverts matrix
+  x$set_inv_matrix(m) #cahces the result
+  m #returns the inverted matrix to user
 }
